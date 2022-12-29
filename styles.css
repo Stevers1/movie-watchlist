@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  max-width: 550px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 40px;
+  height: 100%;
+}
+
+.container_title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 208px;
+  font-family: "Inter", sans-serif;
+  padding: 10px;
+  background-image: url("./background.jpg");
+  background-size: cover;
+  background-position: 10px -160px;
+  filter: brightness(50%);
+  color: white;
+}
+.title {
+  color: rgb(255, 255, 255);
+}
+.container_movies {
+  text-align: center;
+  padding: 20px;
+}
+
+.search_bar {
+  height: 38px;
+  max-width: 400px;
+  width: 98%;
+  position: relative;
+  bottom: 30px;
+  padding: 5px;
+}
+
+.card {
+  display: flex;
+}
+
+img {
+  width: 99px;
+  height: 147px;
+}
+
+.container_button {
+  display: flex;
+  gap: 10px;
+}
+
+.card{
+  display: flex;
+  gap: 10px;
+}
+
+.description{
+  text-align: justify;
+  font-size: .75rem;
+}
+
+h5{
+  font-size: 1rem;
+}
+
+p {
+  font-size: .80rem;
+}
+
+.card_desc{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: justify;
+}
+
+.movie-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
