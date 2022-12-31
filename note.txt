@@ -1,0 +1,19 @@
+            document.querySelectorAll(`#save`).addEventListener("click",() =>{
+              let toLocal = `
+                  <div class="card">
+                    <img src="${item.Poster}" alt="" />
+                    <div class="card_desc">
+                    <h5>${item.Title}</h5>
+            
+                    <div class="container_button">
+                      <p>${item.Runtime} | ${item.Genre}</p>
+                      <button id="save">watchlist</button>
+            
+                    </div>
+                    <p class="description">${item.Plot}</p>
+            
+                  </div>`;
+                console.log("working buttn");
+/*                 localStorage.setItem("movie", toLocal);
+                console.log(localStorage.getItem("movie")); */
+            })

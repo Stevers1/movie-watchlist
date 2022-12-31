@@ -13,6 +13,7 @@ body {
   justify-content: center;
   gap: 20px;
   font-family: "Inter", sans-serif;
+  background-color: rgb(211, 196, 170);
 }
 
 main {
@@ -38,6 +39,7 @@ main {
 }
 .title {
   color: rgb(255, 255, 255);
+  outline: 1px solid red;
 }
 .container_movies {
   text-align: center;
