@@ -1,10 +1,13 @@
 const movieCards = document.querySelector(".movie-cards");
 const searchBar = document.querySelector(".search_bar");
 const watchBtn = document.querySelector(".watchlist")
+const arrayMovies = [];
 
 window.addEventListener("keydown",(e) => {
-  if(e.key ==="Enter"){
-    console.log(localStorage.getItem("movies"))
+  
+  if(e.key ==="*"){
+    localStorage.clear();
+    console.log('Cleared!');
   }
 }) 
 searchBar.addEventListener("keydown", async (e) => {
@@ -47,12 +50,13 @@ searchBar.addEventListener("keydown", async (e) => {
           })
           console.log(movieCards);
           const btns = document.querySelectorAll(`.save`)
-          const arrayMovies = []
+          
           btns.forEach(element => {
             element.addEventListener("click", (e) => {
               let parent=e.target.parentNode
               let grandparent =parent.parentNode
               let gGparent = grandparent.parentNode
+              let gGGparent = gGparent.parentNode
               console.log(gGparent.innerHTML)
               arrayMovies.push(gGparent.innerHTML)
               localStorage.setItem("movies",JSON.stringify(arrayMovies))
@@ -62,8 +66,17 @@ searchBar.addEventListener("keydown", async (e) => {
           })
         }
         );
+        watchBtn.addEventListener("click", () => {
+        movieCards.innerHTML = "";
+        let value = localStorage.getItem("movies")
+        let movieItems = JSON.parse(value)
+        console.log(movieItems);
+        movieItems.forEach((movieElemnt) => {
+          movieCards.innerHTML+= `<div class="card">${movieElemnt}<div/>`
+        })
       });
 
       
+    })    
   }
 });
