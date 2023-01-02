@@ -14,7 +14,7 @@ searchBar.addEventListener("keydown", async (e) => {
   if (e.keyCode === 13) {
     movieCards.innerHTML = "";
     let ask = searchBar.value;
-    fetch(`http://www.omdbapi.com/?apikey=73f63fad&s=${ask}`)
+    fetch(`https://www.omdbapi.com/?apikey=73f63fad&s=${ask}`)
       .then((res) => res.json())
       .then((data) => {
         let movies = [];
@@ -23,7 +23,7 @@ searchBar.addEventListener("keydown", async (e) => {
         }
         const wholeDescription = movies.map(async (item, index) => {
           const res1 = await fetch(
-            `http://www.omdbapi.com/?apikey=73f63fad&i=${item}`
+            `https://www.omdbapi.com/?apikey=73f63fad&i=${item}`
           );
           if (res1.ok) {
             const data1 = await res1.json();
