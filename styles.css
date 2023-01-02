@@ -63,8 +63,9 @@ main {
 }
 
 img {
-  width: 99px;
+  max-width: 99px;
   height: 147px;
+  border-radius: 3px;
 }
 
 .container_button {
@@ -193,3 +194,9 @@ p {
   fill: #0E1822;
  }
  
+ @media(max-width: 600px) {
+
+  main {
+    margin-top: 0;
+  }
+ }
