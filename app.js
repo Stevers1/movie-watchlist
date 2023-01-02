@@ -56,7 +56,6 @@ searchBar.addEventListener("keydown", async (e) => {
               let parent=e.target.parentNode
               let grandparent =parent.parentNode
               let gGparent = grandparent.parentNode
-              let gGGparent = gGparent.parentNode
               console.log(gGparent.innerHTML)
               arrayMovies.push(gGparent.innerHTML)
               localStorage.setItem("movies",JSON.stringify(arrayMovies))
