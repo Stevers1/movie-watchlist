@@ -1,5 +1,6 @@
 const movieCards = document.querySelector(".movie-cards");
 const searchBar = document.querySelector(".search_bar");
+const watchBtn = document.querySelector(".watchlist")
 
 window.addEventListener("keydown",(e) => {
   if(e.key ==="Enter"){
@@ -62,5 +63,7 @@ searchBar.addEventListener("keydown", async (e) => {
         }
         );
       });
+
+      
   }
 });
