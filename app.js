@@ -65,17 +65,19 @@ searchBar.addEventListener("keydown", async (e) => {
           })
         }
         );
-        watchBtn.addEventListener("click", () => {
-        movieCards.innerHTML = "";
-        let value = localStorage.getItem("movies")
-        let movieItems = JSON.parse(value)
-        console.log(movieItems);
-        movieItems.forEach((movieElemnt) => {
-          movieCards.innerHTML+= `<div class="card">${movieElemnt}<div/>`
-        })
-      });
-
-      
-    })    
-  }
+        
+        
+      })    
+    }
+  });
+  
+  watchBtn.addEventListener("click", () => {
+  movieCards.innerHTML = "";
+  console.log(localStorage.getItem("movies"));
+  let value = localStorage.getItem("movies")
+  let movieItems = JSON.parse(value)
+  console.log(movieItems);
+  movieItems.forEach((movieElemnt) => {
+    movieCards.innerHTML+= `<div class="card">${movieElemnt}<div/>`
+  })
 });
