@@ -1,15 +1,10 @@
 const movieCards = document.querySelector(".movie-cards");
 const searchBar = document.querySelector(".search_bar");
 const watchBtn = document.querySelector(".watchlist")
-const arrayMovies = [];
+const arrayMovies = JSON.parse(localStorage.getItem("movies")) || [];
 
-window.addEventListener("keydown",(e) => {
   
-  if(e.key ==="*"){
-    localStorage.clear();
-    console.log('Cleared!');
-  }
-}) 
+
 searchBar.addEventListener("keydown", async (e) => {
   if (e.keyCode === 13) {
     movieCards.innerHTML = "";
@@ -21,7 +16,7 @@ searchBar.addEventListener("keydown", async (e) => {
         for (let i = 0; i < 4; i++) {
           movies.push(data.Search[i].imdbID);
         }
-        const wholeDescription = movies.map(async (item, index) => {
+        const wholeDescription = movies.map(async (item) => {
           const res1 = await fetch(
             `https://www.omdbapi.com/?apikey=73f63fad&i=${item}`
           );
@@ -49,9 +44,9 @@ searchBar.addEventListener("keydown", async (e) => {
               console.log(index)
           })
           console.log(movieCards);
-          const btns = document.querySelectorAll(`.save`)
+          const btnsWatchlist = document.querySelectorAll(`.save`)
           
-          btns.forEach(element => {
+          btnsWatchlist.forEach(element => {
             element.addEventListener("click", (e) => {
               let parent=e.target.parentNode
               let grandparent =parent.parentNode
